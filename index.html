@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="script.js"></script>
+	<title>Ejemplo de Página Web</title>
+</head>
+<body>
+  <video autoplay muted loop>
+		<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+	</video>
+  <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+  alt="Logo de Google">
+	<header>
+		<h1>Mi Página Web</h1>
+		<nav>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/page2.html">Other page</a>
+			<ul>
+				<li><a href="#inicio">Inicio</a></li>
+				<li><a href="#sobre-mi">Sobre mí</a></li>
+				<li><a href="#servicios">Servicios</a></li>
+				<li><a href="#contacto">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section id="inicio">
+			<h2>Bienvenidos a mi página web</h2>
+			<p>En esta página web podrás encontrar información sobre mis servicios y mi trabajo.</p>
+		</section>
+		
+		<section id="sobre-mi">
+			<h2>Sobre mí</h2>
+			<p>Mi nombre es Juan y soy un diseñador web con más de 5 años de experiencia en el campo.</p>
+		</section>
+		
+		<section id="servicios">
+			<h2>Servicios</h2>
+			<ul>
+				<li>Diseño y desarrollo web</li>
+				<li>Optimización SEO</li>
+				<li>Redes sociales y marketing digital</li>
+			</ul>
+		</section>
+		
+		<section id="contacto">
+			<h2>Contacto</h2>
+			<form>
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre"><br>
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email"><br>
+
+				<label for="mensaje">Mensaje:</label>
+				<textarea id="mensaje" name="mensaje"></textarea><br>
+
+				<input type="submit" value="Enviar">
+			</form>
+		</section>
+	</main>
+	
+	<footer>
+		<p>Derechos Reservados &copy; 2023</p>
+	</footer>
+</body>
+</html>
+
