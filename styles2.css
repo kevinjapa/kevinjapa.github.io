@@ -39,7 +39,6 @@
     padding: 4 rem;
     height: 50;
     float: left;
-    background-color: gainsboro;
     width: 70%;
   }  
   h1 {
@@ -82,7 +81,7 @@
     line-height: 10 px;
   }
   section h2{
-    color: #222222;
+    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
   }
   section p{
@@ -98,10 +97,6 @@
     width: 30%;
     height: 50;
     float: right;
-  }
-  aside h2{
-    color: aquamarine;
-    font-family: Arial, Helvetica, sans-serif;
   }
   .clearfix{/* para llamar a una de las clases desde html*/
     clear: both;/* para que los elementos que se estan subiendo se queden en su mismo lugar\*/
@@ -139,4 +134,6 @@
     display: block; /* Convertir la imagen en un elemento de bloque */
     margin: 0 auto; /* Establecer los márgenes superior e inferior en 0 y centrar horizontalmente */
   }
-  
+  table tr{
+      color: rgb(196, 147, 241);
+  }
