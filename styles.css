@@ -86,10 +86,10 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   section p{
-    color: rgb(252, 94, 94);
+    color: beige;
   }
   section li{
-    color: rgb(252, 94, 94);
+    color: beige;
   }
   #contacto{
     color: rgb(255, 255, 255);
@@ -119,24 +119,31 @@
     top: 0;
     right: 0;
   }
-
-
-  /* new pg*/
-
-  #mi-imagen {
-    animation: gira 2s linear infinite; /* Aplicar la animación "gira" durante 2 segundos, de manera lineal y en bucle infinito */
+  .bn{
+    color: rgb(181, 181, 247);
+    font-family: 'Times New Roman', Times, serif;
   }
-  
-  @keyframes gira {
-    from {
-      transform: rotate(0deg); /* La imagen comienza sin rotación */
-    }
-    to {
-      transform: rotate(360deg); /* La imagen gira 360 grados en sentido horario */
-    }
-  }
-  #mi-imagen{
-    display: block; /* Convertir la imagen en un elemento de bloque */
-    margin: 0 auto; /* Establecer los márgenes superior e inferior en 0 y centrar horizontalmente */
-  }
-  
+.c{
+  color: aqua;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/*Para asignar colores css en elementos que sean pares e impares */
+/*Pares*/
+nav ul li:nth-child(even)/*para asignar el css en pares*/
+{
+  background-color: blue;
+}
+main section:nth-child(even)
+{
+  background-color: blue;
+}
+/*Para elementos impares*/
+nav ul li:nth-child(odd)
+{
+  background-color: red;
+}
+main section:nth-child(odd)
+{
+  background-color: red;
+}
