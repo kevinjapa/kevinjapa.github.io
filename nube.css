@@ -1,5 +1,7 @@
+/*codigo pagina*/
+
 body{
-  background-color: rgb(35, 64, 255);
+  background-color: rgb(31, 41, 237);
 }
 .contenedor-imagenes {
   position: relative;
@@ -14,42 +16,38 @@ body{
   top: 0;
   right: 0;
 }
-header{
-  color: #ffffff;
-  text-align: center;
+.clearfix{/* para llamar a una de las clases desde html*/
+  clear: both;/* para que los elementos que se estan subiendo se queden en su mismo lugar\*/
 }
-
+/*Nobe*/
 .cloud {
-  background-color: white;
+  background-color: rgb(169, 224, 251); /* color de las nubes */
   border-radius: 50%;
-  height: 80px;
-  position: relative;
-  width: 120px;
-}
-
-.cloud:before,
-.cloud:after {
-  background-color: white;
-  border-radius: 50%;
-  content: "";
   position: absolute;
-}
-
-.cloud:before {
-  height: 60px;
-  left: 20px;
-  top: -30px;
-  width: 60px;
-}
-
-.cloud:after {
   height: 100px;
-  right: 20px;
-  top: -50px;
-  width: 100px;
+  width: 150px;
+  top: 50px;
+  opacity: 0.8;
+  animation-name: cloud;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-@keyframes move-clouds {
+.cloud:nth-child(1) {
+  left: 10%;
+}
+
+.cloud:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cloud:nth-child(3) {
+  right: 10%;
+}
+
+@keyframes cloud {
   0% {
     transform: translateX(-100%);
   }
@@ -58,273 +56,340 @@ header{
   }
 }
 
-.cloud {
-  animation: move-clouds 1s linear infinite;
+.cloud:nth-child(4) {
+  left: 30%;
+  top: 20%;
+  width: 100px;
+  height: 60px;
+  animation-name: cloud2;
+  animation-duration: 25s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0.6;
 }
 
-/*efecos de las busbujas */
+.cloud:nth-child(5) {
+  left: 70%;
+  top: 30%;
+  width: 120px;
+  height: 80px;
+  animation-name: cloud3;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0.7;
+}
 
-@import url("https://fonts.googleapis.com/css?family=Exo+2:900");
+.cloud:nth-child(6) {
+  left: 20%;
+  top: 80%;
+  width: 140px;
+  height: 90px;
+  animation-name: cloud4;
+  animation-duration: 22s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0.8;
+}
+
+@keyframes cloud2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateY(-20%) translateX(50%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes cloud3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateY(-30%) translateX(50%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes cloud4 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateY(-10%) translateX(80%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+ /*efecos de las busbujas */
+  
+  @import url("https://fonts.googleapis.com/css?family=Exo+2:900");
 h1 {
-font-family: "Exo 2", sans-serif;
-font-size: 8.5vw;
-color: white;
-padding: 5rem 0;
-text-shadow: 0px 4px 48px rgba(255, 255, 255, 0.2);
+  font-family: "Exo 2", sans-serif;
+  font-size: 8.5vw;
+  color: white;
+  padding: 5rem 0;
+  text-shadow: 0px 4px 48px rgba(255, 255, 255, 0.2);
 }
 
 .bubbles-container {
-position: absolute;
-top: 0;
-left: 50%;
-width: 100%;
-max-width: 15rem;
-transform: translateX(-50%);
-opacity: 0.75;
-overflow: visible;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 15rem;
+  transform: translateX(-50%);
+  opacity: 0.75;
+  overflow: visible;
 }
 
 .bubbles {
-width: 100%;
-height: auto;
+  width: 100%;
+  height: auto;
 }
 .bubbles circle {
-stroke: white;
-fill: none;
+  stroke: white;
+  fill: none;
 }
 .bubbles > g > g:nth-of-type(3n) circle {
-stroke: #87f5fb;
+  stroke: #87f5fb;
 }
 .bubbles > g > g:nth-of-type(4n) circle {
-stroke: #8be8cb;
+  stroke: #8be8cb;
 }
 
 .bubbles-large {
-overflow: visible;
+  overflow: visible;
 }
 .bubbles-large > g {
-transform: translateY(2048px);
-opacity: 0;
-will-change: transform, opacity;
+  transform: translateY(2048px);
+  opacity: 0;
+  will-change: transform, opacity;
 }
 .bubbles-large g:nth-of-type(1) {
--webkit-animation: up 6.5s infinite;
-        animation: up 6.5s infinite;
+  -webkit-animation: up 6.5s infinite;
+          animation: up 6.5s infinite;
 }
 .bubbles-large g:nth-of-type(1) g {
-transform: translateX(350px);
+  transform: translateX(350px);
 }
 .bubbles-large g:nth-of-type(1) circle {
--webkit-animation: wobble 3s infinite ease-in-out;
-        animation: wobble 3s infinite ease-in-out;
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
 }
 .bubbles-large g:nth-of-type(2) {
--webkit-animation: up 5.25s 250ms infinite;
-        animation: up 5.25s 250ms infinite;
+  -webkit-animation: up 5.25s 250ms infinite;
+          animation: up 5.25s 250ms infinite;
 }
 .bubbles-large g:nth-of-type(2) g {
-transform: translateX(450px);
+  transform: translateX(450px);
 }
 .bubbles-large g:nth-of-type(2) circle {
--webkit-animation: wobble 3s infinite ease-in-out;
-        animation: wobble 3s infinite ease-in-out;
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
 }
 .bubbles-large g:nth-of-type(3) {
--webkit-animation: up 6s 750ms infinite;
-        animation: up 6s 750ms infinite;
+  -webkit-animation: up 6s 750ms infinite;
+          animation: up 6s 750ms infinite;
 }
 .bubbles-large g:nth-of-type(3) g {
-transform: translateX(700px);
+  transform: translateX(700px);
 }
 .bubbles-large g:nth-of-type(3) circle {
--webkit-animation: wobble 3s infinite ease-in-out;
-        animation: wobble 3s infinite ease-in-out;
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
 }
 .bubbles-large g:nth-of-type(4) {
--webkit-animation: up 5.5s 1.5s infinite;
-        animation: up 5.5s 1.5s infinite;
+  -webkit-animation: up 5.5s 1.5s infinite;
+          animation: up 5.5s 1.5s infinite;
 }
 .bubbles-large g:nth-of-type(4) g {
-transform: translateX(500px);
+  transform: translateX(500px);
 }
 .bubbles-large g:nth-of-type(4) circle {
--webkit-animation: wobble 3s infinite ease-in-out;
-        animation: wobble 3s infinite ease-in-out;
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
 }
 .bubbles-large g:nth-of-type(5) {
--webkit-animation: up 6.5s 4s infinite;
-        animation: up 6.5s 4s infinite;
+  -webkit-animation: up 6.5s 4s infinite;
+          animation: up 6.5s 4s infinite;
 }
 .bubbles-large g:nth-of-type(5) g {
-transform: translateX(675px);
+  transform: translateX(675px);
 }
 .bubbles-large g:nth-of-type(5) circle {
--webkit-animation: wobble 3s infinite ease-in-out;
-        animation: wobble 3s infinite ease-in-out;
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
 }
 
 .bubbles-small {
-overflow: visible;
+  overflow: visible;
 }
 .bubbles-small > g {
-transform: translateY(2048px);
-opacity: 0;
-will-change: transform, opacity;
+  transform: translateY(2048px);
+  opacity: 0;
+  will-change: transform, opacity;
 }
 .bubbles-small g circle {
-transform: scale(0);
+  transform: scale(0);
 }
 .bubbles-small g:nth-of-type(1) {
--webkit-animation: up 5.25s infinite;
-        animation: up 5.25s infinite;
+  -webkit-animation: up 5.25s infinite;
+          animation: up 5.25s infinite;
 }
 .bubbles-small g:nth-of-type(1) g {
-transform: translateX(350px);
+  transform: translateX(350px);
 }
 .bubbles-small g:nth-of-type(1) circle {
--webkit-animation: wobble 3s infinite ease-in-out;
-        animation: wobble 3s infinite ease-in-out;
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(2) {
--webkit-animation: up 5.75s infinite;
-        animation: up 5.75s infinite;
+  -webkit-animation: up 5.75s infinite;
+          animation: up 5.75s infinite;
 }
 .bubbles-small g:nth-of-type(2) g {
-transform: translateX(750px);
+  transform: translateX(750px);
 }
 .bubbles-small g:nth-of-type(2) circle {
--webkit-animation: wobble 3s infinite ease-in-out;
-        animation: wobble 3s infinite ease-in-out;
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(3) {
--webkit-animation: up 5.25s 250ms infinite;
-        animation: up 5.25s 250ms infinite;
+  -webkit-animation: up 5.25s 250ms infinite;
+          animation: up 5.25s 250ms infinite;
 }
 .bubbles-small g:nth-of-type(3) g {
-transform: translateX(350px);
+  transform: translateX(350px);
 }
 .bubbles-small g:nth-of-type(3) circle {
--webkit-animation: wobble 3s 250ms infinite ease-in-out;
-        animation: wobble 3s 250ms infinite ease-in-out;
+  -webkit-animation: wobble 3s 250ms infinite ease-in-out;
+          animation: wobble 3s 250ms infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(4) {
--webkit-animation: up 5.75s 325ms infinite;
-        animation: up 5.75s 325ms infinite;
+  -webkit-animation: up 5.75s 325ms infinite;
+          animation: up 5.75s 325ms infinite;
 }
 .bubbles-small g:nth-of-type(4) g {
-transform: translateX(180px);
+  transform: translateX(180px);
 }
 .bubbles-small g:nth-of-type(4) circle {
--webkit-animation: wobble 3s 325ms infinite ease-in-out;
-        animation: wobble 3s 325ms infinite ease-in-out;
+  -webkit-animation: wobble 3s 325ms infinite ease-in-out;
+          animation: wobble 3s 325ms infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(5) {
--webkit-animation: up 6s 125ms infinite;
-        animation: up 6s 125ms infinite;
+  -webkit-animation: up 6s 125ms infinite;
+          animation: up 6s 125ms infinite;
 }
 .bubbles-small g:nth-of-type(5) g {
-transform: translateX(350px);
+  transform: translateX(350px);
 }
 .bubbles-small g:nth-of-type(5) circle {
--webkit-animation: wobble 3s 250ms infinite ease-in-out;
-        animation: wobble 3s 250ms infinite ease-in-out;
+  -webkit-animation: wobble 3s 250ms infinite ease-in-out;
+          animation: wobble 3s 250ms infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(6) {
--webkit-animation: up 5.13s 250ms infinite;
-        animation: up 5.13s 250ms infinite;
+  -webkit-animation: up 5.13s 250ms infinite;
+          animation: up 5.13s 250ms infinite;
 }
 .bubbles-small g:nth-of-type(6) g {
-transform: translateX(650px);
+  transform: translateX(650px);
 }
 .bubbles-small g:nth-of-type(6) circle {
--webkit-animation: wobble 3s 125ms infinite ease-in-out;
-        animation: wobble 3s 125ms infinite ease-in-out;
+  -webkit-animation: wobble 3s 125ms infinite ease-in-out;
+          animation: wobble 3s 125ms infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(7) {
--webkit-animation: up 6.25s 350ms infinite;
-        animation: up 6.25s 350ms infinite;
+  -webkit-animation: up 6.25s 350ms infinite;
+          animation: up 6.25s 350ms infinite;
 }
 .bubbles-small g:nth-of-type(7) g {
-transform: translateX(480px);
+  transform: translateX(480px);
 }
 .bubbles-small g:nth-of-type(7) circle {
--webkit-animation: wobble 3s 325ms infinite ease-in-out;
-        animation: wobble 3s 325ms infinite ease-in-out;
+  -webkit-animation: wobble 3s 325ms infinite ease-in-out;
+          animation: wobble 3s 325ms infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(8) {
--webkit-animation: up 7s 200ms infinite;
-        animation: up 7s 200ms infinite;
+  -webkit-animation: up 7s 200ms infinite;
+          animation: up 7s 200ms infinite;
 }
 .bubbles-small g:nth-of-type(8) g {
-transform: translateX(330px);
+  transform: translateX(330px);
 }
 .bubbles-small g:nth-of-type(8) circle {
--webkit-animation: wobble 3s 325ms infinite ease-in-out;
-        animation: wobble 3s 325ms infinite ease-in-out;
+  -webkit-animation: wobble 3s 325ms infinite ease-in-out;
+          animation: wobble 3s 325ms infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(9) {
--webkit-animation: up 6.25s 233ms infinite;
-        animation: up 6.25s 233ms infinite;
+  -webkit-animation: up 6.25s 233ms infinite;
+          animation: up 6.25s 233ms infinite;
 }
 .bubbles-small g:nth-of-type(9) g {
-transform: translateX(230px);
+  transform: translateX(230px);
 }
 .bubbles-small g:nth-of-type(9) circle {
--webkit-animation: wobble 3s 275ms infinite ease-in-out;
-        animation: wobble 3s 275ms infinite ease-in-out;
+  -webkit-animation: wobble 3s 275ms infinite ease-in-out;
+          animation: wobble 3s 275ms infinite ease-in-out;
 }
 .bubbles-small g:nth-of-type(10) {
--webkit-animation: up 6s 900ms infinite;
-        animation: up 6s 900ms infinite;
+  -webkit-animation: up 6s 900ms infinite;
+          animation: up 6s 900ms infinite;
 }
 .bubbles-small g:nth-of-type(10) g {
-transform: translateX(730px);
+  transform: translateX(730px);
 }
 .bubbles-small g:nth-of-type(10) circle {
--webkit-animation: wobble 2s 905ms infinite ease-in-out;
-        animation: wobble 2s 905ms infinite ease-in-out;
+  -webkit-animation: wobble 2s 905ms infinite ease-in-out;
+          animation: wobble 2s 905ms infinite ease-in-out;
 }
 
 @-webkit-keyframes wobble {
-33% {
-  transform: translateX(-50px);
-}
-66% {
-  transform: translateX(50px);
-}
+  33% {
+    transform: translateX(-50px);
+  }
+  66% {
+    transform: translateX(50px);
+  }
 }
 
 @keyframes wobble {
-33% {
-  transform: translateX(-50px);
-}
-66% {
-  transform: translateX(50px);
-}
+  33% {
+    transform: translateX(-50px);
+  }
+  66% {
+    transform: translateX(50px);
+  }
 }
 @-webkit-keyframes up {
-0% {
-  opacity: 0;
-}
-10%, 90% {
-  opacity: 1;
-}
-100% {
-  opacity: 0;
-  transform: translateY(-1024px);
-}
+  0% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1024px);
+  }
 }
 @keyframes up {
-0% {
-  opacity: 0;
-}
-10%, 90% {
-  opacity: 1;
-}
-100% {
-  opacity: 0;
-  transform: translateY(-1024px);
-}
+  0% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1024px);
+  }
 }
 
 /*Efectos Avez*/
@@ -333,199 +398,200 @@ transform: translateX(730px);
 *,
 *::before,
 *::after {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .bird {
-background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
-background-size: auto 100%;
-width: 88px;
-height: 125px;
-will-change: background-position;
--webkit-animation-name: fly-cycle;
-        animation-name: fly-cycle;
--webkit-animation-timing-function: steps(10);
-        animation-timing-function: steps(10);
--webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+  -webkit-animation-name: fly-cycle;
+          animation-name: fly-cycle;
+  -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 .bird--one {
--webkit-animation-duration: 1s;
-        animation-duration: 1s;
--webkit-animation-delay: -0.5s;
-        animation-delay: -0.5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
 }
 .bird--two {
--webkit-animation-duration: 0.9s;
-        animation-duration: 0.9s;
--webkit-animation-delay: -0.75s;
-        animation-delay: -0.75s;
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+  -webkit-animation-delay: -0.75s;
+          animation-delay: -0.75s;
 }
 .bird--three {
--webkit-animation-duration: 1.25s;
-        animation-duration: 1.25s;
--webkit-animation-delay: -0.25s;
-        animation-delay: -0.25s;
+  -webkit-animation-duration: 1.25s;
+          animation-duration: 1.25s;
+  -webkit-animation-delay: -0.25s;
+          animation-delay: -0.25s;
 }
 .bird--four {
--webkit-animation-duration: 1.1s;
-        animation-duration: 1.1s;
--webkit-animation-delay: -0.5s;
-        animation-delay: -0.5s;
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
 }
 
 .bird-container {
-position: absolute;
-top: 20%;
-left: -10%;
-transform: scale(0) translateX(-10vw);
-will-change: transform;
--webkit-animation-name: fly-right-one;
-        animation-name: fly-right-one;
--webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
--webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  -webkit-animation-name: fly-right-one;
+          animation-name: fly-right-one;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 .bird-container--one {
--webkit-animation-duration: 15s;
-        animation-duration: 15s;
--webkit-animation-delay: 0;
-        animation-delay: 0;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
 }
 .bird-container--two {
--webkit-animation-duration: 16s;
-        animation-duration: 16s;
--webkit-animation-delay: 1s;
-        animation-delay: 1s;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 .bird-container--three {
--webkit-animation-duration: 14.6s;
-        animation-duration: 14.6s;
--webkit-animation-delay: 9.5s;
-        animation-delay: 9.5s;
+  -webkit-animation-duration: 14.6s;
+          animation-duration: 14.6s;
+  -webkit-animation-delay: 9.5s;
+          animation-delay: 9.5s;
 }
 .bird-container--four {
--webkit-animation-duration: 16s;
-        animation-duration: 16s;
--webkit-animation-delay: 10.25s;
-        animation-delay: 10.25s;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 10.25s;
+          animation-delay: 10.25s;
 }
 
 @-webkit-keyframes fly-cycle {
-100% {
-  background-position: -900px 0;
-}
+  100% {
+    background-position: -900px 0;
+  }
 }
 
 @keyframes fly-cycle {
-100% {
-  background-position: -900px 0;
-}
+  100% {
+    background-position: -900px 0;
+  }
 }
 @-webkit-keyframes fly-right-one {
-0% {
-  transform: scale(0.3) translateX(-10vw);
-}
-10% {
-  transform: translateY(2vh) translateX(10vw) scale(0.4);
-}
-20% {
-  transform: translateY(0vh) translateX(30vw) scale(0.5);
-}
-30% {
-  transform: translateY(4vh) translateX(50vw) scale(0.6);
-}
-40% {
-  transform: translateY(2vh) translateX(70vw) scale(0.6);
-}
-50% {
-  transform: translateY(0vh) translateX(90vw) scale(0.6);
-}
-60% {
-  transform: translateY(0vh) translateX(110vw) scale(0.6);
-}
-100% {
-  transform: translateY(0vh) translateX(110vw) scale(0.6);
-}
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
 }
 @keyframes fly-right-one {
-0% {
-  transform: scale(0.3) translateX(-10vw);
-}
-10% {
-  transform: translateY(2vh) translateX(10vw) scale(0.4);
-}
-20% {
-  transform: translateY(0vh) translateX(30vw) scale(0.5);
-}
-30% {
-  transform: translateY(4vh) translateX(50vw) scale(0.6);
-}
-40% {
-  transform: translateY(2vh) translateX(70vw) scale(0.6);
-}
-50% {
-  transform: translateY(0vh) translateX(90vw) scale(0.6);
-}
-60% {
-  transform: translateY(0vh) translateX(110vw) scale(0.6);
-}
-100% {
-  transform: translateY(0vh) translateX(110vw) scale(0.6);
-}
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
 }
 @-webkit-keyframes fly-right-two {
-0% {
-  transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-}
-10% {
-  transform: translateY(0vh) translateX(10vw) scale(0.4);
-}
-20% {
-  transform: translateY(-4vh) translateX(30vw) scale(0.6);
-}
-30% {
-  transform: translateY(1vh) translateX(50vw) scale(0.45);
-}
-40% {
-  transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-}
-50% {
-  transform: translateY(0vh) translateX(90vw) scale(0.45);
-}
-51% {
-  transform: translateY(0vh) translateX(110vw) scale(0.45);
-}
-100% {
-  transform: translateY(0vh) translateX(110vw) scale(0.45);
-}
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
 }
 @keyframes fly-right-two {
-0% {
-  transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
 }
-10% {
-  transform: translateY(0vh) translateX(10vw) scale(0.4);
-}
-20% {
-  transform: translateY(-4vh) translateX(30vw) scale(0.6);
-}
-30% {
-  transform: translateY(1vh) translateX(50vw) scale(0.45);
-}
-40% {
-  transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-}
-50% {
-  transform: translateY(0vh) translateX(90vw) scale(0.45);
-}
-51% {
-  transform: translateY(0vh) translateX(110vw) scale(0.45);
-}
-100% {
-  transform: translateY(0vh) translateX(110vw) scale(0.45);
-}
-}
-
-
+  
+  
+  
