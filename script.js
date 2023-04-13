@@ -28,13 +28,16 @@ var menu = document.getEleme
 
  /* Como crear un elemento.  boton*/
 
-// Creamos un nuevo elemento de tipo p
-const nuevoElemento = document.createElement("p");
-// Agregamos contenido al elemento
-nuevoElemento.textContent = "¡Hola, soy un nuevo párrafo!";
-// Agregamos el elemento al body del documento
-document.body.appendChild(nuevoElemento);
+ function parrafo()
+ {
+   // Creamos un nuevo elemento de tipo p
+  const nuevoElemento = document.createElement("p");
+  // Agregamos contenido al elemento
+  nuevoElemento.textContent = "¡Hola, soy un nuevo párrafo!";
+  // Agregamos el elemento al body del documento
+  document.body.appendChild(nuevoElemento);
+ }
 
-function AddLink(){
+function link(click){
   console.log("good");
 }
